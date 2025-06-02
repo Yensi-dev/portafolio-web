@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portafolio | Yensi L.</title>
+
+  <!-- Fuentes Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@700&family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Archivo CSS externo -->
+   <link rel="icon" href="img/perfil4.png">
+  <link rel="stylesheet" href="style.css" />
+</head> 
+<body>
+
+  <nav>
+    <div class="logo">Yensi López</div>
+    <ul>
+      <li><a href="#home">Inicio</a></li>
+      <li><a href="#about">Sobre mí</a></li>
+      <li><a href="#projects">Proyectos</a></li>
+      <li><a href="#contact">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <section id="home">
+    <img src="img/perfil4.png" alt="Foto de Yensi López" />
+    <div class="text-container">
+      <h1>Hola, soy Yensi López</h1>
+      <div class="animated-text" id="animated-text"></div>
+      <p>Me apasiona crear soluciones digitales y aprender nuevas tecnologías para crecer profesionalmente.</p>
+      <div class="btn-group">
+        <button onclick="location.href='#projects'">Ver Proyectos</button>
+        <button onclick="location.href='#contact'">Contáctame</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+  <h2>Sobre mí</h2>
+  <div class="about-container">
+    <div class="about-text">
+      <p>
+        ¡Hola! Soy <strong>Yensi David López Díaz</strong>, un apasionado <strong>desarrollador backend</strong> con experiencia en el desarrollo de APIs, análisis de datos y soluciones prácticas para el mundo real. 
+        Estudio <strong>Desarrollo de Aplicaciones Multiplataforma</strong> en la <strong>PUCMM</strong> y he trabajado como desarrollador en SUPLITECMO SRL.
+        Me encanta trabajar con <strong>Node.js, TypeScript, MongoDB</strong> y otras tecnologías modernas. He desarrollado sistemas como un cajero automático virtual, un sistema POS y dashboards interactivos con Power BI.
+      </p>
+      <p>
+        Soy una persona autodidacta, proactiva y enfocada en crear soluciones limpias, seguras y escalables. Siempre busco seguir aprendiendo y aportar valor real a cada proyecto.
+      </p>
+    </div>
+
+    <div class="skills-cards">
+      <div class="skill-card">
+        <h3><i class="fas fa-code"></i> Backend</h3>
+        <ul>
+          <li>Node.js</li>
+          <li>Express</li>
+          <li>TypeScript</li>
+          <li>Jest (pruebas)</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3><i class="fas fa-database"></i> Bases de Datos</h3>
+        <ul>
+          <li>MongoDB</li>
+          <li>SQL Server</li>
+          <li>MySQL</li>
+          <li>Mongoose / TypeORM</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3><i class="fas fa-tools"></i> Otras Habilidades</h3>
+        <ul>
+          <li>Power BI</li>
+          <li>HTML, CSS, JS</li>
+          <li>Git & GitHub</li>
+          <li>Arquitectura limpia</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <section id="projects" class="projects-section">
+  <h2>Proyectos</h2>
+  <div class="carousel-container">
+    <button class="carousel-btn prev-btn">&lt;</button>
+    <div class="carousel">
+      <div class="project-card active">
+        <img src="img/perfil4.png" alt="Proyecto 1" />
+        <h3>Proyecto 1</h3>
+        <p>Lorem, Repellendus, omnis placeat dolorum aperiam unde error a nisi assumenda dignissimos qui et laborum, tenetur eveniet deserunt labore dolore consectetur veniam facere.</p>
+        <a href="#" target="_blank">Ver más</a>
+      </div>
+      <div class="project-card next">
+        <img src="img/perfil4.png" alt="Proyecto 2" />
+        <h3>Proyecto 2</h3>
+        <p>Descripción breve del proyecto 2.</p>
+        <a href="#" target="_blank">Ver más</a>
+      </div>
+      <div class="project-card next2">
+        <img src="img/perfil4.png" alt="Proyecto 3" />
+        <h3>Proyecto 3</h3>
+        <p>Descripción breve del proyecto 3.</p>
+        <a href="#" target="_blank">Ver más</a>
+      </div>
+      <div class="project-card next2">
+        <img src="img/perfil4.png" alt="Proyecto 3" />
+        <h3>Proyecto 3</h3>
+        <p>Descripción breve del proyecto 3.</p>
+        <a href="#" target="_blank">Ver más</a>
+      </div>
+      <div class="project-card next2">
+        <img src="img/perfil4.png" alt="Proyecto 3" />
+        <h3>Proyecto 4</h3>
+        <p>Descripción breve del proyecto 3.</p>
+        <a href="#" target="_blank">Ver más</a>
+      </div>
+      <div class="project-card next2">
+        <img src="img/perfil4.png" alt="Proyecto 3" />
+        <h3>Proyecto 5</h3>
+        <p>Descripción breve del proyecto 3.</p>
+        <a href="#" target="_blank">Ver más</a>
+      </div>
+      <!-- más proyectos -->
+    </div>
+    <button class="carousel-btn next-btn">&gt;</button>
+  </div>
+</section>
+
+
+ <!-- CONTACT SECTION -->
+<section id="contacto" class="contact-section">
+  <h2>Contáctame</h2>
+  <p class="contact-text">
+    ¿Tienes un proyecto en mente o quieres colaborar conmigo? Estoy disponible para trabajar en nuevos desafíos.
+  </p>
+
+  <div class="contact-container">
+    <form class="contact-form" action="https://formspree.io/f/mnnvqqdl" method="POST">
+      <input type="text" name="nombre" placeholder="Tu nombre" required>
+      <input type="email" name="email" placeholder="Tu correo electrónico" required>
+      <input type="text" name="asunto" placeholder="Asunto">
+      <textarea name="mensaje" placeholder="Escribe tu mensaje" required></textarea>
+      <button type="submit">Enviar mensaje</button>
+    </form>
+  </div>
+<!-- Redes sociales debajo -->
+  <div class="contacto-redes">
+    <a href="https://github.com/Yen-si845a" target="_blank" class="icono-red" title="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+    <a href="https://linkedin.com/in/yensilopez" target="_blank" class="icono-red" title="LinkedIn">
+      <i class="fab fa-linkedin-in"></i>
+    </a>
+    <a href="mailto:yensilopez2004@gmail.com" class="icono-red" title="Correo">
+      <i class="fas fa-envelope"></i>
+    </a>
+  </div>
+  
+</section>
+
+
+  <footer>
+    &copy; 2025 Yensi López. Todos los derechos reservados.
+  </footer>
+
+  <!-- Archivo JS externo -->
+  <script src="script.js"></script>
+</body>
+</html>
