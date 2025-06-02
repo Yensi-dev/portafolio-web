@@ -52,6 +52,7 @@ nav ul li a {
   font-size: 16px;
 }
 
+
 nav ul li a::after {
   content: '';
   position: absolute;
@@ -69,6 +70,13 @@ nav ul li a:hover::after {
 
 nav ul li a:hover {
   color: #00bfff;
+}
+
+/* Ocultar emojis en escritorio y mostrar texto */
+nav ul li a .icon {
+  display: none;
+  filter: grayscale(100%) brightness(0) invert(1);
+
 }
 
 section#home {
@@ -656,3 +664,104 @@ footer {
 }
 
 
+
+/* Teléfonos pequeños (hasta 480px) */
+@media screen and (max-width: 480px) {
+  header nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .home-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-container {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-section form {
+    width: 90%;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}
+
+/* Tabletas (481px a 768px) */
+@media screen and (max-width: 768px) {
+  nav ul {
+    gap: 15px;
+  }
+
+  .projects-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .skills-container {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+
+  .home-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  .carousel-container {
+    overflow-x: auto;
+    padding: 1rem 0;
+  }
+
+  .carousel {
+    width: auto;
+    max-width: none;
+    height: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 1rem;
+  }
+
+  .project-card {
+    position: static;
+    min-width: 300px;
+    height: auto;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+    nav ul {
+    gap: 30px; /* menos espacio */
+  }
+  nav ul li a .text {
+    display: none;
+  }
+  nav ul li a .icon {
+    display: inline;
+    font-size: 22px;
+  }
+}
