@@ -1,0 +1,23 @@
+{
+  "pagina-eventos": {
+    "titulo": "Sistema de Gestión de Eventos",
+    "techStack": "JavaScript, Node.js, MySQL, HTML, CSS, Bootstrap",
+    "descripcionLarga": [
+      "Este sistema fue desarrollado para gestionar eventos corporativos y sociales de manera eficiente. Permite mostrar eventos disponibles, cotizar eventos personalizados, y gestionar la información de clientes. Incluye inicio de sesión para usuarios y un panel de administración para gestionar eventos, cotizaciones y clientes.",
+      "El backend está construido con Node.js y MySQL, mientras que el frontend utiliza HTML, CSS y Bootstrap para una interfaz limpia y responsiva. Fue parte de un proyecto educativo que demuestra habilidades en desarrollo web completo (Full Stack)."
+    ],
+    "imagenPrincipal": "img/pro-eventos/index.png",
+    "galeria": [
+        "img/pro-eventos/login.png",
+      "img/pro-eventos/registrarse.png",
+      "img/pro-eventos/inicio.png",
+      "img/pro-eventos/inicio1.png",
+      "img/pro-eventos/inicio2.png",
+      "img/pro-eventos/inicio3.png",
+      "img/pro-eventos/sobre-nosotros.png",
+      "img/pro-eventos/form-cotizacion.png",
+      "img/pro-eventos/usuario.png"
+    ],
+    "repositorio": "https://github.com/Yen-si845a/Pagina-Eventos.git"
+  }
+}
