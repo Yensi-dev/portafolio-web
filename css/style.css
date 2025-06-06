@@ -220,102 +220,79 @@ body {
 
 
 @media (max-width: 768px) {
-  /* Estilo base horizontal con solo íconos */
   .sidebar {
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
+    right: 0;           /* sidebar alineado a la derecha */
+    width: 8%;
+    height: 50px;       /* altura pequeña cuando está cerrado */
     background-color: #0487d9;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-end; /* contenido alineado a la derecha */
     align-items: center;
-    padding: 0.5rem 1rem;
+    padding: 0 1rem;
     border-radius: 0 0 10px 10px;
+    overflow: hidden;
+    transition: width 0.3s ease, height 0.3s ease;
     z-index: 10;
   }
 
-  /* Solo iconos visibles */
-  .sidebar .profile,
-  .sidebar .sidebar-footer,
-  .sidebar .nav a span {
+  .toggle-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;        /* botón en la esquina derecha */
+    font-size: 1.5rem;
+    color: #f2f2f2;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 110;
+
+  }
+
+  /* Oculta todo menos el toggle cuando está cerrado */
+  .sidebar:not(.menu-open) .profile,
+  .sidebar:not(.menu-open) .nav,
+  .sidebar:not(.menu-open) .social-icons,
+  .sidebar:not(.menu-open) .sidebar-footer {
     display: none;
   }
 
-  .sidebar .nav {
-    display: flex;
-    flex-direction: row;
-    gap: 0.8rem;
-    margin: 0;
-    flex-grow: 1;
-  }
-
-  .sidebar .social-icons {
-   display: flex;
-    flex-direction: row;
-    gap: 12px;
-    margin-left: auto;
-    padding-right: 40px; /* deja espacio para el botón */
-    pointer-events: auto;
-    z-index: 100;
-  }
-
-  /* Botón hamburguesa fijo */
-  .toggle-btn {
-    position: fixed;
-    top: 10px;
-    right: 15px;
-    z-index: 200;
-  }
-
-  /* MENÚ ABIERTO */
+  /* Modo abierto muestra todo y la barra cambia a vertical */
   .sidebar.menu-open {
-    position: fixed;
-    top: 0;
-    left: 0;
+    width: 260px;
     height: 100vh;
-    width: 100%;
-    background-color: #0487d9;
-    border-radius: 0;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    z-index: 100;
+    padding: 2rem 1rem;
+    border-radius: 0;
+    box-shadow: -4px 0 20px rgba(0,0,0,0.3);
+    justify-content: flex-start;
+    overflow-y: auto;
   }
 
   .sidebar.menu-open .profile,
-  .sidebar.menu-open .nav a span,
+  .sidebar.menu-open .nav,
+  .sidebar.menu-open .social-icons,
   .sidebar.menu-open .sidebar-footer {
     display: block;
   }
 
-  .sidebar.menu-open .profile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 2rem;
-  }
-
-  .sidebar.menu-open .nav {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
-  }
-
-  .sidebar.menu-open .social-icons {
-    flex-direction: row;
-    gap: 15px;
-    margin-bottom: 1.5rem;
+  /* Asegura que los textos dentro de los enlaces se muestren */
+  .sidebar.menu-open .nav a span {
+    display: inline;
   }
 
   .sidebar.menu-open .sidebar-footer {
-    font-size: 0.75rem;
-    color: #fff;
-    text-align: center;
+    white-space: normal;
+    overflow: visible;
   }
+  .sidebar.menu-open .social-icons {
+  flex-direction: row;
+  justify-content: center;   /* centra los iconos horizontalmente */
+  gap: 300px;                 /* aumenta la separación entre ellos */
+  margin-bottom: 1.5rem;
 }
+
+}
+
 

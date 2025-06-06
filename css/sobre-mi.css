@@ -111,3 +111,50 @@
 .about-text .btn.primary:hover {
   background-color: #0378a6;
 }
+
+@media (max-width: 768px) {
+  .about {
+    margin-left: 35px;
+    left: 0;
+    width: 92%;
+    height: auto;
+    padding: 30px 20px;
+    border-radius: 20px;
+    
+  }
+
+  .about-container {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-img img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .about-text {
+    padding: 0;
+  }
+
+  .about-text p {
+    font-size: 1.1rem;
+  }
+
+  .about-text ul li {
+    font-size: 1rem;
+  }
+
+  .about-text ul li strong {
+    display: block;
+    width: auto;
+    margin-bottom: 4px;
+  }
+
+  .about-text .btn.primary {
+    align-self: center;
+    justify-content: center;
+  }
+}

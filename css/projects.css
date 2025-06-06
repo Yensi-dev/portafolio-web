@@ -256,3 +256,64 @@ height: 3px;
   from { opacity: 0; transform: scale(0.9); }
   to   { opacity: 1; transform: scale(1); }
 }
+
+@media (max-width: 768px) {
+  .projects {
+    margin-left: 20px;
+    left: 0;
+    width: 92%;
+    height: auto;
+    padding: 30px 20px;
+    border-radius: 20px;
+    box-shadow: none;
+    background-color: #f2f2f2; /* Asegura el fondo en responsive */
+
+  }
+
+  .projects-title h2 {
+    font-size: 1.7rem;
+    text-align: center;
+  }
+
+  .title-underline {
+    margin: 0 auto 30px auto;
+  }
+
+  .projects-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .project-card {
+    width: 100%;
+    max-width: 400px;
+    height: 220px;
+    flex: none;
+  }
+
+  .project-info {
+    padding: 15px;
+  }
+
+  .project-info h3 {
+    font-size: 1.2rem;
+  }
+
+  .project-info p {
+    font-size: 0.95rem;
+  }
+
+  .modal-content {
+    padding: 15px;
+  }
+
+  .main-image {
+    max-height: 250px;
+  }
+
+  .github-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

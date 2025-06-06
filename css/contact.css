@@ -163,3 +163,64 @@
     flex-direction: column;
   }
 }
+
+@media (max-width: 768px) {
+  .contact-section {
+    margin-left: 20px;
+    left: 0;
+    width: 92%;
+    height: auto;
+    padding: 30px 20px;
+    border-radius: 20px;
+    box-shadow: none;
+  }
+
+  .contact-title {
+    font-size: 1.7rem;
+    text-align: center;
+  }
+
+  .contact-underline {
+    margin: 0 auto 30px auto;
+  }
+
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-left: 0;
+  }
+
+  .contact-info {
+    margin-top: 0;
+    text-align: center;
+  }
+
+  .contact-info p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .contact-form {
+    padding: 0;
+    width: 100%;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 1rem;
+  }
+
+  .contact-form button {
+    align-self: center;
+    width: 100%;
+    max-width: 250px;
+    justify-content: center;
+  }
+}
