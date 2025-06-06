@@ -1,0 +1,258 @@
+.projects {
+  position: relative;
+  margin-left: 280px;
+  left: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  /* CAMBIO CLAVE: quitar altura fija */
+  height: auto;
+  min-height: 400px;
+
+  padding: 40px 50px;
+  background-color: #f2f2f2;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  transition: margin-left 0.3s ease;
+  color: #333;
+  z-index: 1;
+  width: calc(100% - 280px - 40px);
+
+  /* IMPORTANTE: permitir crecer verticalmente */
+  overflow: visible;
+}
+
+
+.projects-title h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #0d0d0d;
+}
+
+.title-underline {
+height: 3px;
+  width: 50px;
+  background-color: #0487d9; /* color azul */
+  margin-bottom: 30px;    /* espacio abajo antes del contenido */
+  border-radius: 50px;   /* bordes redondeados */
+}
+
+.projects.sidebar-collapsed {
+  margin-left: 100px;
+  width: calc(100% - 100px - 40px);
+}
+
+/* Contenedor para tarjetas */
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: space-between;
+}
+
+/* Tarjeta de proyecto */
+.project-card {
+  position: relative;
+  flex: 1 1 calc(33.33% - 20px);
+  min-width: 250px;
+  height: 200px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  overflow: hidden;
+  cursor: pointer;
+  background-color: #f2f2f2;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Imagen del proyecto */
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* Al pasar mouse, hacer zoom sutil */
+.project-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Capa de texto oculta inicialmente */
+.project-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0487d995; /* color azul con opacidad */
+  color: #f2f2f2;
+  opacity: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 16px;
+  transition: opacity 0.3s ease;
+  pointer-events: none; /* para que no bloquee el hover */
+}
+
+/* Mostrar texto al pasar mouse */
+.project-card:hover .project-info {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Título del proyecto */
+.project-info h3 {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+/* Descripción corta */
+.project-info p {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .projects-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-card {
+    flex: 1 1 100%;
+    max-width: 400px;
+    height: 220px;
+  }
+}
+
+/* Ajuste cuando sidebar está colapsado */
+.projects.sidebar-collapsed .projects-container {
+  flex-direction: column;
+  align-items: center;
+}
+
+/*modal*/
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Contenido */
+.modal-content {
+  background-color: #fff;
+  margin: auto;
+  padding: 20px;
+  width: 90%;
+  max-width: 800px;
+  border-radius: 12px;
+  position: relative;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Cierre */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Imagen principal */
+.main-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* Miniaturas */
+.thumbnails {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.thumbnails img {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: 0.2s;
+}
+
+.thumbnails img:hover {
+  border-color: #0487d9;
+}
+
+/* Descripciones */
+.modal-description p {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+.github-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #0487d9;
+  color: #f2f2f2;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 5px #0487d905;
+}
+
+.github-btn:hover {
+  background-color: #0378a6;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px #0487d907;
+}
+
+
+#modalTitle {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #333;
+  text-align: center;
+} 
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
+}

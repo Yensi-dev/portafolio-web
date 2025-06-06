@@ -1,0 +1,153 @@
+.presentation-box {
+      position: relative;
+      margin-top: 20px;
+      left: 20px;
+      margin-right: 40px;
+      height: calc(100vh - 40px);
+      background-image: url('../img/code.jpg'); /* Asegúrate de que la imagen esté en esa ruta */
+      background-size: cover;
+      background-position: center;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      background-color: #0487d912;
+      background-blend-mode: overlay;
+      border-radius: 20px;
+      padding: 40px 50px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      z-index: 5;
+      color: #f2f2f2;
+      display: flex;
+      align-items: center;
+      margin-left: 280px; /* Ajusta si tienes barra lateral */
+      transition: margin-left 0.3s ease;
+    }
+
+    .presentation-box.sidebar-collapsed {
+      margin-left: 100px; /* para cuando la barra esté contraída */
+    }
+    .presentation-content {
+      max-width: 700px;
+    }
+
+    .presentation-content h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .presentation-content h1 span {
+      font-weight: bold;
+      color: #f2f2f2;
+    }
+
+    .presentation-content h2.typed {
+      font-size: 1.5rem;
+      min-height: 40px;
+      margin-bottom: 20px;
+      color: #f2f2f2;
+    }
+
+    .cursor {
+      font-weight: bold;
+      color: #0487d9;
+      animation: blink 0.7s steps(2) infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .presentation-content p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      color: #f2f2f2;
+    }
+
+    .presentation-content .buttons {
+      display: flex;
+      gap: 20px;
+    }
+
+    .presentation-content .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 25px;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn.primary {
+      background-color: #0487d9;
+      color: #f2f2f2;
+    }
+
+    .btn.primary:hover {
+      background-color: #0378a6;
+    }
+
+    .btn.secondary {
+      border: 2px solid #f2f2f2;
+      color: #f2f2f2;
+      background-color: transparent;
+    }
+
+    .btn.secondary:hover {
+      background-color: #f2f2f2;
+      color: #0487d9;
+    }
+
+    @media (max-width: 768px) {
+      .presentation-box {
+        margin-left: 20px;
+        height: auto;
+        position: relative;
+        padding: 30px 20px;
+      }
+    }
+
+@media (max-width: 768px) {
+  .presentation-box {
+    margin: 70px 15px 40px;
+    height: auto;
+    position: relative;
+    padding: 30px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .presentation-content {
+    max-width: 100%;
+  }
+
+  .presentation-content h1 {
+    font-size: 2rem;
+    text-align: left;
+  }
+
+  .presentation-content h2.typed {
+    font-size: 1.2rem;
+    min-height: auto;
+  }
+
+  .presentation-content p {
+    font-size: 1rem;
+  }
+
+  .presentation-content .buttons {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .presentation-content .btn {
+    justify-content: center;
+    width: 100%;
+    padding: 12px 18px;
+  }
+}
+

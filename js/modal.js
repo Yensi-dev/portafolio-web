@@ -1,57 +1,62 @@
-let proyectos = {};
+const modal = document.getElementById("projectModal");
+const closeBtn = document.querySelector(".close");
+const modalTitle = document.getElementById("modalTitle");
+const mainImage = document.getElementById("mainImage");
+const thumbnailsContainer = document.querySelector(".thumbnails");
+const modalParagraph1 = document.getElementById("modalParagraph1");
+const modalParagraph2 = document.getElementById("modalParagraph2");
+const githubLink = document.getElementById("githubLink");
 
-fetch('data/modal.json')
-  .then(res => res.json())
+let projects = [];
+
+// Cargar JSON externo
+fetch('data/projects.json')
+  .then(response => response.json())
   .then(data => {
-    proyectos = data;
-  })
-  .catch(err => console.error("Error cargando proyectos:", err));
+    projects = data.projects;
 
-function showModal(id) {
-  const proyecto = proyectos[id];
-  if (!proyecto) return;
+    document.querySelectorAll(".project-card").forEach(card => {
+      card.addEventListener("click", () => {
+        const projectId = card.getAttribute("data-id");
+        const project = projects.find(p => p.id === projectId);
 
-  document.getElementById('modal-title').textContent = proyecto.titulo;
+        if (!project) return;
 
-  // Mostrar descripción larga (array) como párrafos dentro del modal
-  const descriptionContainer = document.getElementById('modal-description');
-  descriptionContainer.innerHTML = ""; // limpiar
-  proyecto.descripcionLarga.forEach(parrafo => {
-    const p = document.createElement('p');
-    p.textContent = parrafo;
-    descriptionContainer.appendChild(p);
-  });
+        modalTitle.textContent = project.title;
+        mainImage.src = project.images[0] || "";
 
-  // Imagen principal
-  const mainImage = document.getElementById('modal-main-image');
-  mainImage.src = proyecto.imagenPrincipal;
-  mainImage.alt = proyecto.titulo + " - imagen principal";
+        modalParagraph1.textContent = project.description[0] || "";
+        modalParagraph2.textContent = project.description[1] || "";
 
-  // Galería
-  const galeria = document.getElementById('modal-gallery');
-  galeria.innerHTML = "";
-  proyecto.galeria.forEach(src => {
-    const img = document.createElement('img');
-    img.src = src;
-    img.alt = proyecto.titulo + " - imagen galería";
-    img.style.cursor = "pointer";
+        thumbnailsContainer.innerHTML = "";
+        project.images.forEach(src => {
+          const thumb = document.createElement("img");
+          thumb.src = src;
+          thumb.alt = "Miniatura";
+          thumb.addEventListener("click", () => {
+            mainImage.src = src;
+          });
+          thumbnailsContainer.appendChild(thumb);
+        });
 
-    // Evento click para cambiar imagen principal
-    img.addEventListener('click', () => {
-      mainImage.src = src;
+        // Mostrar o ocultar botón GitHub según exista link
+        if (project.github) {
+          githubLink.href = project.github;
+          githubLink.style.display = "inline-block";
+        } else {
+          githubLink.style.display = "none";
+        }
+
+        modal.style.display = "block";
+      });
     });
-
-    galeria.appendChild(img);
+  })
+  .catch(error => {
+    console.error("Error al cargar el JSON de proyectos:", error);
   });
 
-  // Repositorio
-  const repo = document.getElementById('modal-repo');
-  repo.href = proyecto.repositorio;
-
-  // Mostrar modal
-  document.getElementById('modal').style.display = 'flex';
-}
-
-function closeModal() {
-  document.getElementById('modal').style.display = 'none';
-}
+// Cerrar modal
+closeBtn.onclick = () => modal.style.display = "none";
+window.onclick = e => {
+  if (e.target === modal) modal.style.display = "none";
+};

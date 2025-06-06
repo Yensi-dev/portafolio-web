@@ -1,0 +1,113 @@
+.about {
+  position: relative;            /* relativo para que no se fije */
+  margin-left: 280px;            /* espacio por sidebar desplegada */
+  left: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;           /* separación arriba */
+  height: calc(100vh - 40px);   /* igual que presentation-box */
+  width: calc(100% - 280px - 40px); /* ancho total - sidebar - márgenes (20px left + 20px right) */
+  padding: 40px 50px;            /* igual que presentation-box */
+  background-color: #f2f2f2;     /* fondo sólido para no dejar ver nada detrás */
+  border-radius: 20px;           /* mismo borde redondeado */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  color: #333;
+  box-sizing: border-box;
+  transition: margin-left 0.3s ease, width 0.3s ease;
+  overflow-y: auto;              /* para scroll si hay contenido alto */
+  z-index: 1;                    /* asegúrate que esté sobre otros elementos */
+}
+
+.about.sidebar-collapsed {
+  margin-left: 100px;
+  width: calc(100% - 100px - 40px); /* ajustar ancho con sidebar colapsada */
+}
+
+/* Mantén lo que tengas para .about-title, .about-container, etc. */
+
+.about-title h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  position: relative;
+  text-align: left;
+  color: #0d0d0d;
+}
+
+.title-underline {
+  height: 3px;
+  width: 50px;
+  background-color: #0487d9;
+  margin-bottom: 30px;
+  border-radius: 50px;
+}
+
+.about-container {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.about-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.about-img img {
+  width: 280px;        /* imagen más grande */
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; /* más espacio arriba y abajo */
+  padding-top: 80px;              /* espacio extra arriba */
+  padding-bottom: 80px;           /* espacio extra abajo */
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.about-text p {
+  font-size: 1.25rem;  /* texto más grande */
+  margin-bottom: 24px;
+  line-height: 1.8;
+}
+
+.about-text ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.about-text ul li {
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+.about-text ul li strong {
+  width: 120px;
+  display: inline-block;
+  color: #0487d9;
+}
+
+.about-text .btn.primary {
+  background-color: #0487d9;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 25px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+}
+
+.about-text .btn.primary:hover {
+  background-color: #0378a6;
+}

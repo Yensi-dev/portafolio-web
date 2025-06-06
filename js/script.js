@@ -1,106 +1,94 @@
-const animatedTextElement = document.getElementById('animated-text');
+  const sidebar = document.getElementById('sidebar');
+  const toggleBtn = document.getElementById('toggleBtn');
+  const presentationBox = document.querySelector('.presentation-box');
 
-// Frases para escribir y borrar completas sin cortar palabras
-const phrases = [
-  'Desarrollador Backend',
-  'Apasionado por la tecnología',
-  'Entusiasta del código limpio',
-  'Siempre aprendiendo cosas nuevas',
-  'Buscando retos y proyectos'
-];
+  function updatePresentationBox() {
+    if (!presentationBox || !sidebar) return;
 
-let phraseIndex = 0;
-let letterIndex = 0;
-let currentPhrase = '';
-let isDeleting = false;
-let delay = 200;
-let pauseBetweenPhrases = 1500;
-
-function type() {
-  if (!isDeleting) {
-    if (letterIndex < phrases[phraseIndex].length) {
-      currentPhrase += phrases[phraseIndex][letterIndex];
-      letterIndex++;
-      animatedTextElement.textContent = currentPhrase;
-      setTimeout(type, delay);
+    if (sidebar.classList.contains('collapsed')) {
+      presentationBox.classList.add('sidebar-collapsed');
     } else {
-      // Se terminó de escribir toda la frase, esperar un momento
-      setTimeout(() => {
-        isDeleting = true;
-        setTimeout(type, delay);
-      }, pauseBetweenPhrases);
-    }
-  } else {
-    if (letterIndex > 0) {
-      // Borrar una letra por vez
-      currentPhrase = currentPhrase.slice(0, -1);
-      letterIndex--;
-      animatedTextElement.textContent = currentPhrase;
-      setTimeout(type, delay / 2);
-    } else {
-      // Se terminó de borrar, pasar a la siguiente frase
-      isDeleting = false;
-      phraseIndex = (phraseIndex + 1) % phrases.length;
-      setTimeout(type, delay);
+      presentationBox.classList.remove('sidebar-collapsed');
     }
   }
+
+  if (toggleBtn && sidebar) {
+    toggleBtn.addEventListener('click', () => {
+      // Alterna clases según diseño responsive
+      sidebar.classList.toggle('collapsed');
+      sidebar.classList.toggle('menu-open'); // útil si usas esta clase para modo móvil
+
+      updatePresentationBox(); // aplica efecto al contenido
+    });
+  }
+
+  // Asegura consistencia cuando se carga la página
+  window.addEventListener('load', updatePresentationBox);
+
+
+//sobre mi
+const aboutSection = document.querySelector('.about');
+
+if (aboutSection) {
+  window.addEventListener('load', () => {
+    if (sidebar.classList.contains('collapsed')) {
+      aboutSection.classList.add('sidebar-collapsed');
+    } else {
+      aboutSection.classList.remove('sidebar-collapsed');
+    }
+  });
+
+  toggleBtn.addEventListener('click', () => {
+    aboutSection.classList.toggle('sidebar-collapsed');
+  });
 }
 
-type();
+//skills
+const skillsSection = document.querySelector('.skills');
 
+if (skillsSection) {
+  toggleBtn.addEventListener('click', () => {
+    skillsSection.classList.toggle('sidebar-collapsed');
+  });
 
-// Seccion de proyectos (tarjetas)
-
-    const cards = document.querySelectorAll('.project-card');
-const prevBtn = document.querySelector('.prev-btn');
-const nextBtn = document.querySelector('.next-btn');
-
-let current = 0;
-let isAnimating = false;
-
-function updateCarousel() {
-  cards.forEach((card, i) => {
-    card.className = 'project-card'; // reset clases
-
-    if (i === current) {
-      card.classList.add('active');
-    } else if (i === current - 1 || (current === 0 && i === cards.length -1)) {
-      card.classList.add('prev');
-    } else if (i === current - 2 || (current <= 1 && i === cards.length - 2) || (current === 0 && i === cards.length -1)) {
-      card.classList.add('prev2');
-    } else if (i === current + 1 || (current === cards.length -1 && i === 0)) {
-      card.classList.add('next');
-    } else if (i === current + 2 || (current >= cards.length -2 && i === 1) || (current === cards.length -1 && i === 0)) {
-      card.classList.add('next2');
-    } else if (i < current) {
-      card.classList.add('out-left');
+  window.addEventListener('load', () => {
+    if (sidebar.classList.contains('collapsed')) {
+      skillsSection.classList.add('sidebar-collapsed');
     } else {
-      card.classList.add('out-right');
+      skillsSection.classList.remove('sidebar-collapsed');
     }
   });
 }
 
-// Inicializar
-updateCarousel();
+//projects
+const projectsSection = document.querySelector('.projects');
+if (projectsSection) {
+  toggleBtn.addEventListener('click', () => {
+    projectsSection.classList.toggle('sidebar-collapsed');
+  });
 
-function changeSlide(direction) {
-  if (isAnimating) return; // evitar spam clicks
-
-  isAnimating = true;
-
-  if (direction === 'prev') {
-    current = (current - 1 + cards.length) % cards.length;
-  } else {
-    current = (current + 1) % cards.length;
-  }
-  updateCarousel();
-
-  // Esperar la duración de la transición para permitir otro cambio
-  setTimeout(() => {
-    isAnimating = false;
-  }, 700); // igual que la duración en CSS (700ms)
+  window.addEventListener('load', () => {
+    if (sidebar.classList.contains('collapsed')) {
+      projectsSection.classList.add('sidebar-collapsed');
+    } else {
+      projectsSection.classList.remove('sidebar-collapsed');
+    }
+  });
 }
 
-prevBtn.addEventListener('click', () => changeSlide('prev'));
-nextBtn.addEventListener('click', () => changeSlide('next'));
+// contacto
+const contactSection = document.querySelector('.contact-section');
+if (contactSection) {
+  toggleBtn.addEventListener('click', () => {
+    contactSection.classList.toggle('sidebar-collapsed');
+  });
+
+  window.addEventListener('load', () => {
+    if (sidebar.classList.contains('collapsed')) {
+      contactSection.classList.add('sidebar-collapsed');
+    } else {
+      contactSection.classList.remove('sidebar-collapsed');
+    }
+  });
+}
 

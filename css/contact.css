@@ -1,0 +1,165 @@
+.contact-section {
+  position: relative;
+  margin-left: 280px; /* igual que sidebar expandida */
+  left: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: calc(100vh - 40px);
+  width: calc(100% - 280px - 40px);
+  padding: 40px 50px;
+  background-color: #0487d912;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  color: #333;
+  box-sizing: border-box;
+  transition: margin-left 0.3s ease, width 0.3s ease;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.contact-section.sidebar-collapsed {
+  margin-left: 100px;
+  width: calc(100% - 100px - 40px); /* ajustar ancho con sidebar colapsada */
+}
+
+/* Título */
+.contact-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #0d0d0d;
+}
+
+.contact-underline {
+  height: 3px;
+  width: 50px;
+  background-color: #0487d9;
+  margin-bottom: 30px;
+  border-radius: 50px;
+  margin-top: 10px;
+}
+
+/* Contenedor principal con flex para info + formulario */
+.contact-container {
+  display: flex;
+  justify-content: flex-start; /* ya está para alinear a la izquierda */
+  align-items: flex-start;
+  gap: 10px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin-left: 5%; /* elimina centrado horizontal */
+  /* margin: 0; también puedes usar para quitar margen total */
+  /* margin: 0 0 0 20px; para un poco de margen a la izquierda */
+}
+
+
+/* Información de contacto */
+.contact-info {
+  flex: 0 0 320px; /* un poco más ancho */
+  color: #333;
+  margin-top: 100px;
+}
+
+.contact-info h3 {
+  margin: 0;
+  /* ya aplicado en .contact-title */
+}
+
+.contact-info p {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  line-height: 1.6;
+    margin-bottom: 100px;
+
+}
+
+/* Formulario */
+.contact-form {
+  flex: 1;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px 40px;
+  background-color: transparent; /* transparente */
+  margin-top: 0px;
+  margin-left: 0px;
+}
+
+/* Filas dobles */
+.form-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.form-row input {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Inputs y textarea */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 15px 20px;
+  font-size: 1rem;
+  border: 1.5px solid #cccccc88;
+  border-radius: 50px;
+  background-color: transparent;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  resize: none;
+  color: #333;
+  font-family: inherit;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #0487d9;
+  box-shadow: 0 0 0 2px #0487d933;
+  background-color: transparent;
+}
+
+/* Botón */
+.contact-form button {
+  padding: 10px 25px;
+  background-color: #0487d9;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  align-self: flex-start;
+  width: auto;
+}
+
+.contact-form button:hover {
+  background-color: #036ab2;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .contact-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .contact-info,
+  .contact-form {
+    max-width: 100%;
+  }
+
+  .contact-form {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+  }
+}
