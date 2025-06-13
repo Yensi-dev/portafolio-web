@@ -112,12 +112,14 @@
 
 @media (max-width: 768px) {
   .presentation-box {
-    margin: 70px 15px 40px;
-    height: auto;
     position: relative;
+    margin-top: 60px;
+    margin-left: 15px;
+    left: 0;
+    width: 92%;
+    height: auto;
     padding: 30px 20px;
-    flex-direction: column;
-    align-items: flex-start;
+    border-radius: 20px;
   }
 
   .presentation-content {

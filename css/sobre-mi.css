@@ -114,13 +114,16 @@
 
 @media (max-width: 768px) {
   .about {
-    margin-left: 35px;
+    margin-left: 15px;
     left: 0;
     width: 92%;
     height: auto;
     padding: 30px 20px;
     border-radius: 20px;
-    
+    background-color: #f2f2f2; /* Asegura el fondo en responsive */
+    overflow-y: visible; /* Para evitar scroll en móviles */
+    z-index: 0; /* Asegura que no esté sobre otros elementos */
+
   }
 
   .about-container {

@@ -90,7 +90,7 @@ height: 3px;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #0487d995; /* color azul con opacidad */
+  background-color: #0d0d0db8; /* color azul con opacidad */
   color: #f2f2f2;
   opacity: 0;
   padding: 20px;
@@ -142,8 +142,9 @@ height: 3px;
 
 /* Ajuste cuando sidebar está colapsado */
 .projects.sidebar-collapsed .projects-container {
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 /*modal*/
@@ -259,13 +260,12 @@ height: 3px;
 
 @media (max-width: 768px) {
   .projects {
-    margin-left: 20px;
+    margin-left: 15px;
     left: 0;
     width: 92%;
     height: auto;
     padding: 30px 20px;
     border-radius: 20px;
-    box-shadow: none;
     background-color: #f2f2f2; /* Asegura el fondo en responsive */
 
   }

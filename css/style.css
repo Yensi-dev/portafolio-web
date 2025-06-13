@@ -240,7 +240,7 @@ body {
   .toggle-btn {
     position: absolute;
     top: 10px;
-    right: 15px;        /* botón en la esquina derecha */
+    right: 5px;        /* botón en la esquina derecha */
     font-size: 1.5rem;
     color: #f2f2f2;
     background: transparent;
