@@ -1,6 +1,6 @@
  const frases = [
-      "Desarrollador Web",
-      "Apasionado por el código",
+      "Desarrollador de Apps",
+      "Desarrollador Full Stack",
       "Creativo y autodidacta"
     ];
 
