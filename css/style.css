@@ -223,76 +223,149 @@ body {
   .sidebar {
     position: fixed;
     top: 0;
-    right: 0;           /* sidebar alineado a la derecha */
-    width: 8%;
-    height: 50px;       /* altura pequeña cuando está cerrado */
-    background-color: #0487d9;
+    left: 0;
+    width: 100%;
+    height: 60px;
     display: flex;
-    justify-content: flex-end; /* contenido alineado a la derecha */
+    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     padding: 0 1rem;
-    border-radius: 0 0 10px 10px;
+    border-radius: 0 0 0px 0px;
+    background-color: #0487d9;
+    z-index: 100;
     overflow: hidden;
-    transition: width 0.3s ease, height 0.3s ease;
-    z-index: 10;
+    transition: all 0.3s ease;
   }
 
-  .toggle-btn {
-    position: absolute;
-    top: 10px;
-    right: 5px;        /* botón en la esquina derecha */
-    font-size: 1.5rem;
-    color: #f2f2f2;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    z-index: 110;
+  /* 🟢 Foto a la izquierda */
+  .sidebar .profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 1rem; /* <--- separación extra */
+  margin-top: 30px;
+}
 
+
+  .sidebar .profile img {
+    width: 40px;
+    height: 40px;
+    border: 2px solid white;
   }
 
-  /* Oculta todo menos el toggle cuando está cerrado */
-  .sidebar:not(.menu-open) .profile,
-  .sidebar:not(.menu-open) .nav,
-  .sidebar:not(.menu-open) .social-icons,
-  .sidebar:not(.menu-open) .sidebar-footer {
+  .sidebar .profile .name,
+  .sidebar .profile .role {
     display: none;
   }
 
-  /* Modo abierto muestra todo y la barra cambia a vertical */
+  /* 🔴 Ocultar redes sociales y footer */
+  .sidebar .social-icons,
+  .sidebar-footer {
+    display: none;
+  }
+
+  /* 🔵 Íconos a la derecha */
+  .nav {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .nav a span {
+    display: none;
+  }
+
+  .nav a {
+    padding: 0;
+    justify-content: center;
+  }
+
+  /* 🔧 Ajustes: alinea la navegación a la derecha */
+  .sidebar .nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 25px;
+  margin-right: 50px; /* <-- esto empuja los íconos a la derecha */
+  margin-top: 0; /* <-- elimina el margen superior */
+}
+
+
+  /* BOTÓN MENÚ */
+  .toggle-btn {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  font-size: 1.5rem;
+  z-index: 110;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+
+  /* 📂 Cuando se despliega */
   .sidebar.menu-open {
-    width: 260px;
-    height: 100vh;
     flex-direction: column;
-    padding: 2rem 1rem;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
     border-radius: 0;
-    box-shadow: -4px 0 20px rgba(0,0,0,0.3);
-    justify-content: flex-start;
+    padding: 2rem 1rem;
     overflow-y: auto;
+    justify-content: flex-start;
   }
 
-  .sidebar.menu-open .profile,
-  .sidebar.menu-open .nav,
-  .sidebar.menu-open .social-icons,
-  .sidebar.menu-open .sidebar-footer {
+  .sidebar.menu-open .profile {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .sidebar.menu-open .profile img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .sidebar.menu-open .profile .name,
+  .sidebar.menu-open .profile .role {
     display: block;
+    text-align: center;
   }
 
-  /* Asegura que los textos dentro de los enlaces se muestren */
+  .sidebar.menu-open .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 2rem;
+  }
+
+  .sidebar.menu-open .nav a {
+    justify-content: flex-start;
+    padding: 0.5rem 1rem;
+  }
+
   .sidebar.menu-open .nav a span {
     display: inline;
+    margin-left: 10px;
+  }
+
+  .sidebar.menu-open .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 2rem;
   }
 
   .sidebar.menu-open .sidebar-footer {
-    white-space: normal;
-    overflow: visible;
+    display: block;
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.7rem;
+    color: #fffefecc;
   }
-  .sidebar.menu-open .social-icons {
-  flex-direction: row;
-  justify-content: center;   /* centra los iconos horizontalmente */
-  gap: 300px;                 /* aumenta la separación entre ellos */
-  margin-bottom: 1.5rem;
+
+ 
 }
-
-}
-
-
