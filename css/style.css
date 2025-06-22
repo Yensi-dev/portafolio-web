@@ -226,27 +226,26 @@ body {
     left: 0;
     width: 100%;
     height: 60px;
+    background-color: #0487d9;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     padding: 0 1rem;
     border-radius: 0 0 0px 0px;
-    background-color: #0487d9;
     z-index: 100;
     overflow: hidden;
     transition: all 0.3s ease;
   }
 
-  /* 🟢 Foto a la izquierda */
+  /* Foto a la izquierda */
   .sidebar .profile {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-right: 1rem; /* <--- separación extra */
-  margin-top: 30px;
-}
-
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+    margin-right: 1rem;
+  }
 
   .sidebar .profile img {
     width: 40px;
@@ -259,22 +258,21 @@ body {
     display: none;
   }
 
-  /* 🔴 Ocultar redes sociales y footer */
+  /* Ocultar íconos sociales y footer en modo cerrado */
   .sidebar .social-icons,
   .sidebar-footer {
     display: none;
   }
 
-  /* 🔵 Íconos a la derecha */
-  .nav {
+  /* Navegación horizontal al cerrar */
+  .sidebar .nav {
     display: flex;
     flex-direction: row;
-    gap: 15px;
+    justify-content: flex-end;
     align-items: center;
-  }
-
-  .nav a span {
-    display: none;
+    gap: 25px;
+    margin-right: 50px;
+    margin-top: 0;
   }
 
   .nav a {
@@ -282,42 +280,35 @@ body {
     justify-content: center;
   }
 
-  /* 🔧 Ajustes: alinea la navegación a la derecha */
-  .sidebar .nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 25px;
-  margin-right: 50px; /* <-- esto empuja los íconos a la derecha */
-  margin-top: 0; /* <-- elimina el margen superior */
-}
+  .nav a span {
+    display: none;
+  }
 
-
-  /* BOTÓN MENÚ */
+  /* Botón menú */
   .toggle-btn {
-  position: absolute;
-  top: 15px;
-  right: 10px;
-  font-size: 1.5rem;
-  z-index: 110;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-}
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    font-size: 1.5rem;
+    z-index: 110;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
 
-
-  /* 📂 Cuando se despliega */
+  /* ====== MODO DESPLEGADO ====== */
   .sidebar.menu-open {
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
+    width: 100vw;
+    max-width: 100%;
     height: 100vh;
-    width: 100%;
-    border-radius: 0;
     padding: 2rem 1rem;
     overflow-y: auto;
-    justify-content: flex-start;
+    border-radius: 0;
+    box-sizing: border-box;
   }
 
   .sidebar.menu-open .profile {
@@ -340,11 +331,15 @@ body {
     flex-direction: column;
     align-items: flex-start;
     margin-top: 2rem;
+    width: 100%;
+    padding: 0 20px;
   }
 
   .sidebar.menu-open .nav a {
-    justify-content: flex-start;
+    width: 100%;
     padding: 0.5rem 1rem;
+    justify-content: flex-start;
+    text-align: center;
   }
 
   .sidebar.menu-open .nav a span {
@@ -354,7 +349,9 @@ body {
 
   .sidebar.menu-open .social-icons {
     display: flex;
+    flex-direction: row;
     justify-content: center;
+    align-items: center;
     gap: 20px;
     margin-top: 2rem;
   }
@@ -365,7 +362,21 @@ body {
     text-align: center;
     font-size: 0.7rem;
     color: #fffefecc;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    width: 100%;
   }
 
- 
+  .sidebar.menu-open .sidebar-footer .copy {
+    display: block;
+    width: 100%;
+    overflow: visible;
+    white-space: normal;
+    text-overflow: unset;
+  }
+
+  .sidebar.menu-open .sidebar-footer .copy::after {
+    content: "";
+  }
 }
