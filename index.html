@@ -17,6 +17,7 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     crossorigin="anonymous"
   />
+  <link rel="icon" href="img/perfil-icon.png">
 </head>
 <body>
   <aside class="sidebar" id="sidebar">
@@ -27,7 +28,7 @@
     <div class="profile">
       <img src="img/perfil.jpg" alt="User" />
       <h2 class="name">Yensi <span class="dot"></span></h2>
-      <p class="role">App developer</p>
+      <p class="role">Desarrollador de Apps</p>
     </div>
 
     <nav class="nav">
@@ -163,16 +164,24 @@
   <div class="projects-title">
     <h2>Proyectos</h2>
     <div class="title-underline"></div>
+    <div class="projects-filter">
+      <span class="filter-item active" data-filter="all">Todos</span>
+      <span class="filter-item" data-filter="javascript">JavaScript / Node.js</span>
+    <!--<span class="filter-item" data-filter="csharp">C# / .NET</span>
+      <span class="filter-item" data-filter="php">PHP</span>
+      <span class="filter-item" data-filter="typescript">TypeScript</span>
+      <span class="filter-item" data-filter="flutter">Flutter</span>-->
+    </div>
   </div>
   <div class="projects-container">
-    <div class="project-card" data-id="1">
+    <div class="project-card" data-id="1" data-tech="javascript">
       <img src="img/pro-eventos/index.png" alt="Proyecto 1" />
       <div class="project-info">
         <h3>Pagina de Eventos</h3>
         <p>Este es un proyecto enfocado en la gestión de eventos</p>
       </div>
     </div>
-    <div class="project-card" data-id="2">
+    <div class="project-card" data-id="2" data-tech="flutter">
       <img src="img/code.jpg" alt="Proyecto 2" />
       <div class="project-info">
         <h3>Proyecto 2</h3>
@@ -275,7 +284,7 @@
 
 
 
-
+  <script src="js/barra-projects.js"></script>
   <script src="js/modal.js"></script>
   <script src="js/script.js"></script>
   <script src="js/presentacion.js"></script>

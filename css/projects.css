@@ -1,14 +1,9 @@
+/* ========== SECCIÓN: Proyectos ========== */
+
 .projects {
   position: relative;
-  margin-left: 280px;
+  margin: 20px 0 20px 280px;
   left: 20px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-
-  /* CAMBIO CLAVE: quitar altura fija */
-  height: auto;
-  min-height: 400px;
-
   padding: 40px 50px;
   background-color: #f2f2f2;
   border-radius: 20px;
@@ -18,11 +13,15 @@
   color: #333;
   z-index: 1;
   width: calc(100% - 280px - 40px);
-
-  /* IMPORTANTE: permitir crecer verticalmente */
+  height: auto;
+  min-height: 400px;
   overflow: visible;
 }
 
+.projects.sidebar-collapsed {
+  margin-left: 100px;
+  width: calc(100% - 100px - 40px);
+}
 
 .projects-title h2 {
   font-size: 2rem;
@@ -31,19 +30,55 @@
 }
 
 .title-underline {
-height: 3px;
+  height: 3px;
   width: 50px;
-  background-color: #0487d9; /* color azul */
-  margin-bottom: 30px;    /* espacio abajo antes del contenido */
-  border-radius: 50px;   /* bordes redondeados */
+  background-color: #0487d9;
+  margin-bottom: 30px;
+  border-radius: 50px;
 }
 
-.projects.sidebar-collapsed {
-  margin-left: 100px;
-  width: calc(100% - 100px - 40px);
+/* ========== Filtro de tecnologías ========== */
+
+.projects-filter {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 30px;
+  font-weight: 600;
+  flex-wrap: wrap;
+  font-size: 0.95rem;
+  color: #0d0d0d;
 }
 
-/* Contenedor para tarjetas */
+.filter-item {
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.filter-item::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 1px;
+  background-color: #0487d9;
+  left: 0;
+  bottom: -4px;
+  transition: width 0.3s ease;
+}
+
+/* Línea solo al pasar el mouse */
+.filter-item:hover::after {
+  width: 100%;
+}
+
+/* Hover y activo: texto azul */
+.filter-item.active {
+  color: #0487d9;
+}
+
+
+/* ========== Contenedor de tarjetas ========== */
+
 .projects-container {
   display: flex;
   flex-wrap: wrap;
@@ -51,7 +86,14 @@ height: 3px;
   justify-content: space-between;
 }
 
-/* Tarjeta de proyecto */
+.projects.sidebar-collapsed .projects-container {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* ========== Tarjeta individual ========== */
+
 .project-card {
   position: relative;
   flex: 1 1 calc(33.33% - 20px);
@@ -70,7 +112,6 @@ height: 3px;
   box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
-/* Imagen del proyecto */
 .project-card img {
   width: 100%;
   height: 100%;
@@ -78,19 +119,17 @@ height: 3px;
   transition: transform 0.3s ease;
 }
 
-/* Al pasar mouse, hacer zoom sutil */
 .project-card:hover img {
   transform: scale(1.05);
 }
 
-/* Capa de texto oculta inicialmente */
 .project-info {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #0d0d0db8; /* color azul con opacidad */
+  background-color: #0d0d0db8;
   color: #f2f2f2;
   opacity: 0;
   padding: 20px;
@@ -103,52 +142,28 @@ height: 3px;
   font-weight: 600;
   border-radius: 16px;
   transition: opacity 0.3s ease;
-  pointer-events: none; /* para que no bloquee el hover */
+  pointer-events: none;
 }
 
-/* Mostrar texto al pasar mouse */
 .project-card:hover .project-info {
   opacity: 1;
   pointer-events: auto;
 }
 
-/* Título del proyecto */
 .project-info h3 {
   margin-bottom: 10px;
   font-size: 1.3rem;
   font-weight: 700;
 }
 
-/* Descripción corta */
 .project-info p {
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.3;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .projects-container {
-    flex-direction: column;
-    align-items: center;
-  }
+/* ========== Modal ========== */
 
-  .project-card {
-    flex: 1 1 100%;
-    max-width: 400px;
-    height: 220px;
-  }
-}
-
-/* Ajuste cuando sidebar está colapsado */
-.projects.sidebar-collapsed .projects-container {
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-/*modal*/
-/* Modal */
 .modal {
   display: none;
   position: fixed;
@@ -162,7 +177,6 @@ height: 3px;
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-/* Contenido */
 .modal-content {
   background-color: #fff;
   margin: auto;
@@ -174,7 +188,6 @@ height: 3px;
   animation: fadeIn 0.3s ease;
 }
 
-/* Cierre */
 .close {
   position: absolute;
   top: 15px;
@@ -185,7 +198,6 @@ height: 3px;
   cursor: pointer;
 }
 
-/* Imagen principal */
 .main-image {
   width: 100%;
   max-height: 400px;
@@ -194,7 +206,6 @@ height: 3px;
   margin-bottom: 15px;
 }
 
-/* Miniaturas */
 .thumbnails {
   display: flex;
   gap: 10px;
@@ -217,12 +228,18 @@ height: 3px;
   border-color: #0487d9;
 }
 
-/* Descripciones */
 .modal-description p {
   margin-bottom: 10px;
   font-size: 1rem;
   color: #333;
   line-height: 1.5;
+}
+
+#modalTitle {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #333;
+  text-align: center;
 }
 
 .github-btn {
@@ -244,30 +261,22 @@ height: 3px;
   box-shadow: 0 4px 10px #0487d907;
 }
 
-
-#modalTitle {
-  font-size: 2rem;
-  margin-bottom: 30px;
-  color: #333;
-  text-align: center;
-} 
-
+/* ========== Animaciones ========== */
 
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.9); }
   to   { opacity: 1; transform: scale(1); }
 }
 
+/* ========== Responsive ========== */
+
 @media (max-width: 768px) {
   .projects {
     margin-left: 15px;
     left: 0;
     width: 92%;
-    height: auto;
     padding: 30px 20px;
     border-radius: 20px;
-    background-color: #f2f2f2; /* Asegura el fondo en responsive */
-
   }
 
   .projects-title h2 {
@@ -315,5 +324,9 @@ height: 3px;
   .github-btn {
     width: 100%;
     text-align: center;
+  }
+
+  .projects-filter {
+    justify-content: center;
   }
 }
