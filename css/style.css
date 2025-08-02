@@ -203,7 +203,6 @@ body {
   text-overflow: ellipsis;
 }
 
-/* Al retraerse la barra, solo se ve el símbolo © */
 .sidebar.collapsed .sidebar-footer .copy {
   width: 20px;
   overflow: hidden;
@@ -212,7 +211,6 @@ body {
   display: inline-block;
 }
 
-/* También puedes ocultar el texto y dejar solo el símbolo */
 .sidebar.collapsed .sidebar-footer .copy::after {
   content: "©";
   display: inline-block;

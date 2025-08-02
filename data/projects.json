@@ -21,19 +21,28 @@
       ],
       "github": "https://github.com/Yensi-dev/Pagina-Eventos.git"
     },
-    {
-      "id": "2",
-      "title": "Proyecto 2",
-      "description": [
-        "Aplicación móvil desarrollada con Flutter.",
-        "Incluye integración con Firebase y notificaciones push."
-      ],
-      "images": [
-        "ruta/img2a.jpg",
-        "ruta/img2b.jpg"
-      ],
-      "github": "https://github.com/usuario/proyecto2"
-    },
+{
+  "id": "2",
+  "title": "App de Películas",
+  "description": [
+    "Aplicación móvil desarrollada con Flutter como parte de un proyecto grupal. Permite a los usuarios guardar y organizar sus películas favoritas de forma práctica. A través de la API pública de TMDB, pueden explorar títulos, ver detalles y añadirlos a una lista personalizada. También cuenta con autenticación de usuarios mediante Firebase, lo que permite almacenar la colección en la nube.",
+    "El desarrollo de esta aplicación demuestra habilidades en trabajo colaborativo, consumo de APIs públicas, manejo de autenticación y almacenamiento en tiempo real con Firebase, así como diseño de interfaces modernas y responsivas utilizando Flutter."
+  ],
+  "images": [
+    "img/pro-pelisfavoritas/intro.jpg",
+    "img/pro-pelisfavoritas/screen1.jpg",
+    "img/pro-pelisfavoritas/screen2.jpg",
+    "img/pro-pelisfavoritas/screen3.jpg",
+    "img/pro-pelisfavoritas/registrarse.jpg",
+    "img/pro-pelisfavoritas/login.jpg",
+    "img/pro-pelisfavoritas/inicio.jpg",
+    "img/pro-pelisfavoritas/favoritos.jpg",
+    "img/pro-pelisfavoritas/modal.jpg",
+    "img/pro-pelisfavoritas/buscar.jpg",
+    "img/pro-pelisfavoritas/perfil.jpg"
+  ],
+  "github": "https://github.com/Yensi-dev/my_movie_box.git"
+},
     {
       "id": "3",
       "title": "Proyecto 3",
