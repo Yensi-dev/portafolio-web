@@ -21,41 +21,43 @@
       ],
       "github": "https://github.com/Yensi-dev/Pagina-Eventos.git"
     },
-{
-  "id": "2",
-  "title": "App de Películas",
-  "description": [
-    "Aplicación móvil desarrollada con Flutter como parte de un proyecto grupal. Permite a los usuarios guardar y organizar sus películas favoritas de forma práctica. A través de la API pública de TMDB, pueden explorar títulos, ver detalles y añadirlos a una lista personalizada. También cuenta con autenticación de usuarios mediante Firebase, lo que permite almacenar la colección en la nube.",
-    "El desarrollo de esta aplicación demuestra habilidades en trabajo colaborativo, consumo de APIs públicas, manejo de autenticación y almacenamiento en tiempo real con Firebase, así como diseño de interfaces modernas y responsivas utilizando Flutter."
-  ],
-  "images": [
-    "img/pro-pelisfavoritas/intro.jpg",
-    "img/pro-pelisfavoritas/screen1.jpg",
-    "img/pro-pelisfavoritas/screen2.jpg",
-    "img/pro-pelisfavoritas/screen3.jpg",
-    "img/pro-pelisfavoritas/registrarse.jpg",
-    "img/pro-pelisfavoritas/login.jpg",
-    "img/pro-pelisfavoritas/inicio.jpg",
-    "img/pro-pelisfavoritas/favoritos.jpg",
-    "img/pro-pelisfavoritas/modal.jpg",
-    "img/pro-pelisfavoritas/buscar.jpg",
-    "img/pro-pelisfavoritas/perfil.jpg"
-  ],
-  "github": "https://github.com/Yensi-dev/my_movie_box.git"
-},
     {
-      "id": "3",
-      "title": "Proyecto 3",
+      "id": "2",
+      "title": "App de Películas",
       "description": [
-        "Sitio web de portafolio personal.",
-        "Diseño responsivo con animaciones interactivas usando GSAP."
+        "Aplicación móvil desarrollada con Flutter como parte de un proyecto grupal. Permite a los usuarios guardar y organizar sus películas favoritas de forma práctica. A través de la API pública de TMDB, pueden explorar títulos, ver detalles y añadirlos a una lista personalizada. También cuenta con autenticación de usuarios mediante Firebase, lo que permite almacenar la colección en la nube.",
+        "El desarrollo de esta aplicación demuestra habilidades en trabajo colaborativo, consumo de APIs públicas, manejo de autenticación y almacenamiento en tiempo real con Firebase, así como diseño de interfaces modernas y responsivas utilizando Flutter."
       ],
       "images": [
-        "ruta/img3a.jpg",
-        "ruta/img3b.jpg",
-        "ruta/img3c.jpg"
+        "img/pro-pelisfavoritas/intro.jpg",
+        "img/pro-pelisfavoritas/screen1.jpg",
+        "img/pro-pelisfavoritas/screen2.jpg",
+        "img/pro-pelisfavoritas/screen3.jpg",
+        "img/pro-pelisfavoritas/registrarse.jpg",
+        "img/pro-pelisfavoritas/login.jpg",
+        "img/pro-pelisfavoritas/inicio.jpg",
+        "img/pro-pelisfavoritas/favoritos.jpg",
+        "img/pro-pelisfavoritas/modal.jpg",
+        "img/pro-pelisfavoritas/buscar.jpg",
+        "img/pro-pelisfavoritas/perfil.jpg"
       ],
-      "github": "https://github.com/usuario/proyecto3"
+      "github": "https://github.com/Yensi-dev/my_movie_box.git"
+    },
+    {
+      "id": "3",
+      "title": "To-Do List App",
+      "description": [
+        "Aplicación web básica de lista de tareas que permite crear, marcar y eliminar pendientes mediante una interfaz moderna e intuitiva desarrollada con React.",
+        "El backend está implementado con Node.js y utiliza MongoDB para el almacenamiento y manejo eficiente de los datos. Todo el entorno fue configurado con Docker, garantizando portabilidad, consistencia y facilidad de despliegue."
+      ],
+      "images": [
+        "img/pro-todolist/inicio.png",
+        "img/pro-todolist/agregar.png",
+        "img/pro-todolist/detalle.png",
+        "img/pro-todolist/pendientes.png",
+        "img/pro-todolist/completadas.png"
+      ],
+      "github": "https://github.com/Yensi-dev/to-do-list-app.git"
     }
   ]
 }
